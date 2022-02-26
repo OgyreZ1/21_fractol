@@ -6,7 +6,7 @@
 /*   By: yironmak <yironmak@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 16:14:40 by yironmak          #+#    #+#             */
-/*   Updated: 2022/02/26 19:15:41 by yironmak         ###   ########.fr       */
+/*   Updated: 2022/02/26 19:34:50 by yironmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,12 @@ void	init_e(t_env *e)
 									&(e->img.size_line), &(e->img.endian));
 }
 
+void	choose_set(char *arg, t_env *e)
+{
+	if (ft_strncmp(arg, "Mandelbrot", ft_strlen("Mandelbrot")) == 0)
+		init_mandelbrot(e);
+}
+
 int	main(int argc, char **argv)
 {
 	t_env	e;
@@ -32,6 +38,6 @@ int	main(int argc, char **argv)
 	init_e(&e);
 	mlx_mouse_hook(e.win, deal_mouse, &e);
 	mlx_key_hook(e.win, deal_key, &e);
-	mandelbrot(&e);
+	choose_set(argv[1], &e);
 	mlx_loop(e.mlx);
 }

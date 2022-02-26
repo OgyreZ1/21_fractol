@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   sets.c                                             :+:      :+:    :+:   */
+/*   mandelbrot.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: yironmak <yironmak@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 16:21:59 by yironmak          #+#    #+#             */
-/*   Updated: 2022/02/26 19:15:44 by yironmak         ###   ########.fr       */
+/*   Updated: 2022/02/26 19:34:18 by yironmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ void	init_mandelbrot(t_env *e)
 	e->max = 50;
 	e->x_zoom = e->width / e->zoom_k;
 	e->y_zoom = e->height / e->zoom_k;
+	mandelbrot(e);
 }
 
 void	mandelbrot(t_env *e)

@@ -6,7 +6,7 @@
 /*   By: yironmak <yironmak@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 13:00:04 by yironmak          #+#    #+#             */
-/*   Updated: 2022/02/26 19:12:40 by yironmak         ###   ########.fr       */
+/*   Updated: 2022/02/26 19:33:29 by yironmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,14 @@ typedef struct s_env
 	int			i;
 }				t_env;
 
+int		ft_strncmp(const char *s1, const char *s2, int n);
+int		ft_strlen(const char *s);
 int		color_scheme_1(int n);
 void	mandelbrot(t_env *e);
 void	pixel_put_img(t_image *img, int x, int y, int color);
 void	choose_color(t_env *e);
 int		deal_mouse(int button, int x, int y, t_env *e);
 int		deal_key(int key, t_env *e);
+void	init_mandelbrot(t_env *e);
 
 #endif
