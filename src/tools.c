@@ -6,9 +6,11 @@
 /*   By: yironmak <yironmak@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 19:32:36 by yironmak          #+#    #+#             */
-/*   Updated: 2022/02/26 19:33:05 by yironmak         ###   ########.fr       */
+/*   Updated: 2022/02/26 20:00:13 by yironmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "fractol.h"
 
 int	ft_strncmp(const char *s1, const char *s2, int n)
 {
@@ -29,4 +31,15 @@ int	ft_strlen(const char *s)
 	while (s[len])
 		len++;
 	return (len);
+}
+
+void	ft_putstr(char *s)
+{
+	int	i;
+
+	if (!s)
+		return ;
+	i = -1;
+	while (s[++i])
+		write(1, &(s[i]), 1);
 }

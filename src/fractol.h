@@ -6,7 +6,7 @@
 /*   By: yironmak <yironmak@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 13:00:04 by yironmak          #+#    #+#             */
-/*   Updated: 2022/02/26 19:33:29 by yironmak         ###   ########.fr       */
+/*   Updated: 2022/02/26 20:05:34 by yironmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FRACTOL_H
 # include "mlx.h"
 # include "stdio.h"
+# include <unistd.h>
 # include "stdlib.h"
 
 typedef struct s_image
@@ -52,16 +53,23 @@ typedef struct s_env
 	double		zoom;
 	int			max;
 	int			i;
+	int			set;
 }				t_env;
 
 int		ft_strncmp(const char *s1, const char *s2, int n);
 int		ft_strlen(const char *s);
+void	ft_putstr(char *s);
 int		color_scheme_1(int n);
-void	mandelbrot(t_env *e);
 void	pixel_put_img(t_image *img, int x, int y, int color);
 void	choose_color(t_env *e);
 int		deal_mouse(int button, int x, int y, t_env *e);
 int		deal_key(int key, t_env *e);
+void	draw_set(t_env *e);
 void	init_mandelbrot(t_env *e);
+void	init_julia_1(t_env *e);
+void	init_julia_2(t_env *e);
+void	init_julia_3(t_env *e);
+void	mandelbrot(t_env *e);
+void	julia(t_env *e);
 
 #endif

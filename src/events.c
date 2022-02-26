@@ -6,7 +6,7 @@
 /*   By: yironmak <yironmak@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 19:07:30 by yironmak          #+#    #+#             */
-/*   Updated: 2022/02/26 19:10:10 by yironmak         ###   ########.fr       */
+/*   Updated: 2022/02/26 19:53:41 by yironmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	zoom(int x, int y, t_env *e)
 	e->y += (y * old_zoom / e->height) - (y * e->zoom_k / e->height);
 	e->x_zoom = e->width / e->zoom_k;
 	e->y_zoom = e->height / e->zoom_k;
-	mandelbrot(e);
+	draw_set(e);
 }
 
 int	deal_mouse(int button, int x, int y, t_env *e)
@@ -57,7 +57,7 @@ int	deal_key(int key, t_env *e)
 		e->y += 0.1 / e->zoom;
 	else if (key == 13)
 		e->y -= 0.1 / e->zoom;
-	mandelbrot(e);
+	draw_set(e);
 	if (key == 53)
 	{
 		mlx_destroy_image(e->mlx, e->img.img_ptr);

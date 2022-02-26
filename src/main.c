@@ -6,7 +6,7 @@
 /*   By: yironmak <yironmak@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 16:14:40 by yironmak          #+#    #+#             */
-/*   Updated: 2022/02/26 19:34:50 by yironmak         ###   ########.fr       */
+/*   Updated: 2022/02/26 20:05:47 by yironmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,18 +23,42 @@ void	init_e(t_env *e)
 									&(e->img.size_line), &(e->img.endian));
 }
 
+void	draw_set(t_env *e)
+{
+	if (e->set == 1)
+		mandelbrot(e);
+	if (e->set == 2)
+		julia(e);
+}
+
+void	print_params(void)
+{
+	ft_putstr("Choose one of them as an argument:\n");
+	ft_putstr("1. Mandelbrot\n");
+	ft_putstr("2. Julia_1\n");
+	exit(1);
+}
+
 void	choose_set(char *arg, t_env *e)
 {
 	if (ft_strncmp(arg, "Mandelbrot", ft_strlen("Mandelbrot")) == 0)
 		init_mandelbrot(e);
+	else if (ft_strncmp(arg, "Julia_1", ft_strlen("Julia_1")) == 0)
+		init_julia_1(e);
+	else if (ft_strncmp(arg, "Julia_2", ft_strlen("Julia_2")) == 0)
+		init_julia_2(e);
+	else if (ft_strncmp(arg, "Julia_3", ft_strlen("Julia_3")) == 0)
+		init_julia_3(e);
+	else
+		print_params();
 }
 
 int	main(int argc, char **argv)
 {
 	t_env	e;
 
-	(void)argc;
-	(void)argv;
+	if (argc == 1)
+		print_params();
 	init_e(&e);
 	mlx_mouse_hook(e.win, deal_mouse, &e);
 	mlx_key_hook(e.win, deal_key, &e);
