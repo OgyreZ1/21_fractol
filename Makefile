@@ -1,4 +1,4 @@
-SRCS	=	./src/colors.c ./src/events.c ./src/main.c ./src/mandelbrot.c ./src/tools.c ./src/julia.c
+SRCS	=	./src/colors.c ./src/events.c ./src/main.c ./src/mandelbrot.c ./src/tools.c ./src/julia.c ./src/burning_ship.c
 
 OBJ_SRC = ${SRCS:.c=.o}
 

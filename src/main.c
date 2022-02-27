@@ -6,7 +6,7 @@
 /*   By: yironmak <yironmak@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 16:14:40 by yironmak          #+#    #+#             */
-/*   Updated: 2022/02/26 20:05:47 by yironmak         ###   ########.fr       */
+/*   Updated: 2022/02/27 19:54:23 by yironmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ void	init_e(t_env *e)
 	e->mlx = mlx_init();
 	e->height = 500;
 	e->width = 500;
+	e->color_scheme = 0;
 	e->win = mlx_new_window(e->mlx, e->width, e->height, "Fractol");
 	e->img.img_ptr = mlx_new_image(e->mlx, e->width, e->height);
 	e->img.addr = mlx_get_data_addr(e->img.img_ptr, &(e->img.bits_per_pixel), \
@@ -29,6 +30,8 @@ void	draw_set(t_env *e)
 		mandelbrot(e);
 	if (e->set == 2)
 		julia(e);
+	if (e->set == 3)
+		burning_ship(e);
 }
 
 void	print_params(void)
@@ -36,6 +39,9 @@ void	print_params(void)
 	ft_putstr("Choose one of them as an argument:\n");
 	ft_putstr("1. Mandelbrot\n");
 	ft_putstr("2. Julia_1\n");
+	ft_putstr("3. Julia_2\n");
+	ft_putstr("4. Julia_3\n");
+	ft_putstr("5. Burning_ship\n");
 	exit(1);
 }
 
@@ -49,6 +55,8 @@ void	choose_set(char *arg, t_env *e)
 		init_julia_2(e);
 	else if (ft_strncmp(arg, "Julia_3", ft_strlen("Julia_3")) == 0)
 		init_julia_3(e);
+	else if (ft_strncmp(arg, "Burning_ship", ft_strlen("Burning_ship")) == 0)
+		init_burning_ship(e);
 	else
 		print_params();
 }

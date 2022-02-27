@@ -6,7 +6,7 @@
 /*   By: yironmak <yironmak@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 19:07:30 by yironmak          #+#    #+#             */
-/*   Updated: 2022/02/26 19:53:41 by yironmak         ###   ########.fr       */
+/*   Updated: 2022/02/27 19:56:12 by yironmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ void	zoom(int x, int y, t_env *e)
 
 int	deal_mouse(int button, int x, int y, t_env *e)
 {
-	if (button == 2 || button == 5)
+	if (button == 1 || button == 5)
 	{
 		e->zoom *= 1.1;
 		if (e->max < 250)
 			e->max++;
 	}
-	else if (button == 1 || button == 4)
+	else if (button == 2 || button == 4)
 	{
 		e->zoom /= 1.1;
 		if (e->max > 50)
@@ -47,8 +47,23 @@ int	deal_mouse(int button, int x, int y, t_env *e)
 	return (0);
 }
 
+void	change_set(int key, t_env *e)
+{
+	if (key == 18)
+		init_mandelbrot(e);
+	else if (key == 19)
+		init_julia_1(e);
+	else if (key == 20)
+		init_julia_2(e);
+	else if (key == 21)
+		init_julia_3(e);
+	else if (key == 23)
+		init_burning_ship(e);
+}
+
 int	deal_key(int key, t_env *e)
 {
+	printf("%d\n", key);
 	if (key == 2)
 		e->x += 0.1 / e->zoom;
 	else if (key == 0)
@@ -57,6 +72,9 @@ int	deal_key(int key, t_env *e)
 		e->y += 0.1 / e->zoom;
 	else if (key == 13)
 		e->y -= 0.1 / e->zoom;
+	else if (key >= 82 && key <= 92)
+		e->color_scheme = key - 82;
+	change_set(key, e);
 	draw_set(e);
 	if (key == 53)
 	{

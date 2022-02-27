@@ -6,33 +6,28 @@
 /*   By: yironmak <yironmak@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/01/11 16:05:25 by yironmak          #+#    #+#             */
-/*   Updated: 2022/02/26 19:12:28 by yironmak         ###   ########.fr       */
+/*   Updated: 2022/02/27 19:39:40 by yironmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fractol.h"
 
-int	color_scheme_1(int n)
+int	color_scheme(int n, t_env *e)
 {
 	int	colors[16];
 
-	colors[0] = 0x421E0F;
+	colors[0] = 0x1a0707;
 	colors[1] = 0x19071A;
-	colors[2] = 0x09012F;
-	colors[3] = 0x040449;
-	colors[4] = 0x000764;
-	colors[5] = 0x0C2C8A;
+	colors[2] = 0x07191a;
+	colors[3] = 0xF8C95F;
+	colors[4] = 0xD3ECF8;
+	colors[5] = 0xAAAAAA;
 	colors[6] = 0x1852B1;
-	colors[7] = 0x397DD1;
-	colors[8] = 0x86B5E5;
-	colors[9] = 0xD3ECF8;
+	colors[7] = 0x071a0b;
+	colors[8] = 0x181a07;
+	colors[9] = 0x181a07;
 	colors[10] = 0xF1E9BF;
-	colors[11] = 0xF8C95F;
-	colors[12] = 0xFFAA00;
-	colors[13] = 0xCC8000;
-	colors[14] = 0x995700;
-	colors[15] = 0x6A3403;
-	return (colors[n % 16]);
+	return (colors[e->color_scheme] * (n % 16));
 }
 
 void	pixel_put_img(t_image *img, int x, int y, int color)
@@ -46,7 +41,7 @@ void	pixel_put_img(t_image *img, int x, int y, int color)
 void	choose_color(t_env *e)
 {
 	if (e->i < e->max)
-		pixel_put_img(&e->img, e->xi, e->yi, color_scheme_1(e->i));
+		pixel_put_img(&e->img, e->xi, e->yi, color_scheme(e->i, e));
 	else
 		pixel_put_img(&e->img, e->xi, e->yi, 0x0);
 }
