@@ -6,7 +6,7 @@
 /*   By: yironmak <yironmak@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 16:14:40 by yironmak          #+#    #+#             */
-/*   Updated: 2022/02/27 19:54:23 by yironmak         ###   ########.fr       */
+/*   Updated: 2022/03/03 15:18:17 by yironmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,8 @@ int	main(int argc, char **argv)
 	if (argc == 1)
 		print_params();
 	init_e(&e);
+	choose_set(argv[1], &e);
 	mlx_mouse_hook(e.win, deal_mouse, &e);
 	mlx_key_hook(e.win, deal_key, &e);
-	choose_set(argv[1], &e);
 	mlx_loop(e.mlx);
 }

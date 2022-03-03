@@ -6,14 +6,13 @@
 /*   By: yironmak <yironmak@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 13:00:04 by yironmak          #+#    #+#             */
-/*   Updated: 2022/02/27 19:49:43 by yironmak         ###   ########.fr       */
+/*   Updated: 2022/03/03 15:21:51 by yironmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FRACTOL_H
 # define FRACTOL_H
 # include "mlx.h"
-# include "stdio.h"
 # include <unistd.h>
 # include "stdlib.h"
 

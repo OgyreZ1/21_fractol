@@ -6,7 +6,7 @@
 /*   By: yironmak <yironmak@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 19:07:30 by yironmak          #+#    #+#             */
-/*   Updated: 2022/02/27 19:56:12 by yironmak         ###   ########.fr       */
+/*   Updated: 2022/03/03 15:21:41 by yironmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ void	change_set(int key, t_env *e)
 
 int	deal_key(int key, t_env *e)
 {
-	printf("%d\n", key);
 	if (key == 2)
 		e->x += 0.1 / e->zoom;
 	else if (key == 0)
