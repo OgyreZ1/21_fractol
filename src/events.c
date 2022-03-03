@@ -6,7 +6,7 @@
 /*   By: yironmak <yironmak@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/02/26 19:07:30 by yironmak          #+#    #+#             */
-/*   Updated: 2022/03/03 15:21:41 by yironmak         ###   ########.fr       */
+/*   Updated: 2022/03/03 15:44:59 by yironmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,5 +81,13 @@ int	deal_key(int key, t_env *e)
 		mlx_destroy_window(e->mlx, e->win);
 		exit(0);
 	}
+	return (0);
+}
+
+int	deal_destroy(t_env *e)
+{
+	mlx_destroy_image(e->mlx, e->img.img_ptr);
+	mlx_destroy_window(e->mlx, e->win);
+	exit(0);
 	return (0);
 }

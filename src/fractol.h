@@ -6,7 +6,7 @@
 /*   By: yironmak <yironmak@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 13:00:04 by yironmak          #+#    #+#             */
-/*   Updated: 2022/03/03 15:21:51 by yironmak         ###   ########.fr       */
+/*   Updated: 2022/03/03 15:45:09 by yironmak         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,6 +64,7 @@ void	pixel_put_img(t_image *img, int x, int y, int color);
 void	choose_color(t_env *e);
 int		deal_mouse(int button, int x, int y, t_env *e);
 int		deal_key(int key, t_env *e);
+int		deal_destroy(t_env *e);
 void	draw_set(t_env *e);
 void	init_mandelbrot(t_env *e);
 void	init_julia_1(t_env *e);
