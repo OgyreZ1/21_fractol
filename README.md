@@ -11,6 +11,11 @@ After executing this command you'll see choosen set. For example, Mandelbrot set
 
 You can zoom in and out almost infinitely. Also you can change sets (press keys from 1 to 5) and colors (press numpad keys from 0 to 9)
 
+![gif1_AdobeExpress (2)](https://user-images.githubusercontent.com/34583349/175312787-f8914056-93d8-40d6-b589-eb226fef87e1.gif)
+
+![gif2_AdobeExpress](https://user-images.githubusercontent.com/34583349/175311518-d6891cec-d1fd-4b4d-89c1-fbb86b014e7d.gif)
+
+
 <img width="500" alt="image" src="https://user-images.githubusercontent.com/34583349/175296806-6c2412c6-8903-4e02-8983-bb47e072d186.png">
 
 <img width="504" alt="image" src="https://user-images.githubusercontent.com/34583349/175296855-3646d682-3ba2-458a-8203-208709e5e6b9.png">
@@ -18,6 +23,5 @@ You can zoom in and out almost infinitely. Also you can change sets (press keys 
 <img width="501" alt="image" src="https://user-images.githubusercontent.com/34583349/175296904-c7f801f7-e371-4e12-9c64-b9e197611818.png">
 
 <img width="499" alt="image" src="https://user-images.githubusercontent.com/34583349/175296969-7388aeeb-0a43-47f1-bbf8-74fbeaefeff5.png">
-
 
 
