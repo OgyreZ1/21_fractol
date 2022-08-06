@@ -1,31 +1,29 @@
 SRCS	=	./src/colors.c ./src/events.c ./src/main.c ./src/mandelbrot.c ./src/tools.c ./src/julia.c ./src/burning_ship.c
 
-OBJ_SRC = ${SRCS:.c=.o}
-
-CC = gcc
+OBJS = $(SRCS:.c=.o)
 
 NAME = fractol
 
-REM = rm -f
+CFLAGS = -Wall -Wextra -Werror
 
-HEADER = ./src/fractol.h
+.PHONY: 	clean fclean all re bonus
 
-FLAGS = -Wall -Wextra -Werror -g
+all:		$(NAME)
 
-.PHONY: all clean fclean re
+.c.o:
+			gcc $(CFLAGS) -c $< -o $@
 
-%.o:	%.c ${HEADER}
-			${CC} ${FLAGS} -Imlx -c $< -o $@
-
-${NAME}: ${OBJ_SRC}
-			${CC} ${FLAGS} ${OBJ_SRC} -lmlx -framework OpenGL -framework AppKit -o ${NAME}
-
-all: ${NAME}
+$(NAME):	$(OBJS)
+			make -C ./mlx
+			gcc -o $(NAME) $(OBJS) $(CFLAGS) -lmlx -L./mlx -framework OpenGL -framework AppKit
 
 clean:
-	${REM} ${OBJ_SRC} ${OBJ_B}
+			rm -f $(OBJS)
 
-fclean: clean
-	${REM} ${OBJ_SRC} ${OBJ_B} ${NAME} ${BONUS}
-	
-re: fclean all
+fclean: 	clean
+			rm -f $(NAME)
+
+re:			fclean all
+
+
+
